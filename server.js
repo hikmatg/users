@@ -12,9 +12,8 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(auth());
-
 app.use(express.static(path.join(__dirname, 'dist')));
+app.use(auth());
 app.use('/api', api);
 
 app.use(function(req, res) {
